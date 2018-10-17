@@ -83,7 +83,7 @@ setup(
     author='Jimmy Liu',
     author_email='jimmysoa@sina.cn',
     license='BSD',
-    url='http://tushare.org',
+    url='https://github.com/emailck/tushare.git',
     install_requires=read_install_requires(),
     keywords='Global Financial Data',
     classifiers=['Development Status :: 4 - Beta',
