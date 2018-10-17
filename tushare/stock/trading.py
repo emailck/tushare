@@ -100,7 +100,7 @@ def get_hist_data(code=None, start=None, end=None,
     raise IOError(ct.NETWORK_URL_ERROR_MSG)
 
 
-def _parsing_dayprice_json(types=None, page=1):
+def _parsing_dayprice_json(types=None, page=1, timeout=30):
     """
            处理当日行情分页数据，格式为json
      Parameters
@@ -113,7 +113,7 @@ def _parsing_dayprice_json(types=None, page=1):
     ct._write_console()
     request = Request(ct.SINA_DAY_PRICE_URL%(ct.P_TYPE['http'], ct.DOMAINS['vsf'],
                                  ct.PAGES['jv'], types, page))
-    text = urlopen(request, timeout=10).read()
+    text = urlopen(request, timeout=timeout).read()
     if text == 'null':
         return None
     reg = re.compile(r'\,(.*?)\:') 
